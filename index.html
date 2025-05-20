@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Granizados a tu Gusto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style3.css" />
+</head>
+<body>
+    <header class="header">
+    <div class="container">
+      <h1 class="logo">GRANIZADOS A TU GUSTO</h1>
+      <nav>
+        <ul class="nav">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#personaliza">Personaliza</a></li>
+          <li><a href="#filtros">Filtros</a></li>
+          <li><a href="#carrito">Carrito</a></li>
+                    <li><a href="#inicio-sesion">Iniciar Sesión</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+    <section id="inicio-sesion" class="inicio-sesion container">
+    <h3>Iniciar Sesión</h3>
+    <form id="form-inicio-sesion">
+      <label for="email-login">Correo Electrónico:</label>
+      <input type="email" id="email-login" name="email" required />
+
+      <label for="password-login">Contraseña:</label>
+      <input type="password" id="password-login" name="password" required />
+
+      <button type="submit" class="btn">Acceder</button>
+    </form>
+    <p>¿No tienes cuenta? <a href="#registro">Regístrate aquí</a></p>
+  </section>
+
+    <section id="inicio" class="hero">
+    <div class="container">
+      <h2>¡Crea el granizado perfecto!</h2>
+      <p>Sabores frescos, toppings deliciosos y opciones únicas.</p>
+      <img src="granizado.jpg" alt="Granizado colorido" />
+      <a href="#personaliza" class="btn">¡Empezar ahora!</a>
+    </div>
+  </section>
+
+    <section id="personaliza" class="personaliza container">
+    <h3>Selecciona tus preferencias</h3>
+    <form id="form-personaliza">
+      <label>Sabor:
+        <select name="sabor" required>
+          <option value="">Seleccionar</option>
+          <option value="limon">Limón</option>
+          <option value="frutilla">Frutilla</option>
+          <option value="mango">Mango</option>
+          <option value="naranja">Naranja</option>
+          <option value="sandia">Sandía</option>
+        </select>
+      </label>
+
+      <label>Topping:
+        <select name="topping" required>
+          <option value="">Seleccionar</option>
+          <option value="gomitas">Gomitas</option>
+          <option value="chocolate">Chocolate</option>
+          <option value="frutas">Frutas</option>
+          <option value="crema">Crema batida</option>
+          <option value="granola">Granola</option>
+        </select>
+      </label>
+
+      <label>Agregar alcohol:
+        <input type="checkbox" name="alcohol" />
+      </label>
+
+      <button type="submit" class="btn">Agregar al carrito</button>
+    </form>
+
+        <div class="galeria-sabores">
+      <img src="limon.jpg" alt="Limón" />
+      <img src="fresa.jpg" alt="Frutilla" />
+      <img src="mango.jpg" alt="Mango" />
+      <img src="naranja.jpg" alt="Naranja" />
+      <img src="sandia.jpg" alt="Sandía" />
+    </div>
+  </section>
+
+    <section id="filtros" class="container">
+    <h3>Filtros de salud</h3>
+    <form>
+      <label><input type="checkbox" name="sinAzucar" /> Sin azúcar</label>
+      <label><input type="checkbox" name="sinGluten" /> Sin gluten</label>
+    </form>
+  </section>
+
+    <section id="carrito" class="container">
+    <h3>Resumen del pedido</h3>
+    <img src="carrito.jpg" alt="Carrito feliz" style="width:80px; margin-top:1rem;" />
+    <ul id="lista-carrito"></ul>
+    <p><strong>Total:</strong> $<span id="total">0</span></p>
+
+        <form id="form-correo" style="display:none;">
+      <label>Correo electrónico:
+        <input type="email" name="email" required />
+      </label>
+      <button type="submit" class="btn">Enviar recibo</button>
+    </form>
+
+ <button id="btn-eliminar" class="btn" style="background-color: #d9534f;">Eliminar pedido</button>
+ <p id="mensaje-confirmacion"></p>
+  </section>
+
+    <footer class="footer">
+    <div class="container">
+      <p>©️ 2025 Granizados a tu Gusto | contacto@granizados.com</p>
+    </div>
+  </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

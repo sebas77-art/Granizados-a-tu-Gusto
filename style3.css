@@ -1,0 +1,420 @@
+/* === Reset y fuente principal === */
+/* BOX SIZING UNIVERSAL */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f0f2f5; /* Fondo gris muy claro para un look moderno */
+    color: #333; /* Texto más oscuro pero suave */
+    line-height: 1.6;
+    overflow-x: hidden; /* Evita barras de desplazamiento horizontales accidentales */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px; /* Aumenta el ancho máximo para pantallas más grandes */
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem; /* Aumenta el padding vertical */
+}
+
+/* === Encabezado y logo === */
+.header {
+    background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%); /* Degradado moderno azul-morado */
+    padding: 1.2rem 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between; /* Espacia el logo y la nav */
+    align-items: center;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+}
+
+.logo {
+    font-size: 2.8rem; /* Tamaño más grande para el logo */
+    font-weight: 700;
+    color: #ffffff;
+    background: linear-gradient(45deg, #00dbde 0%, #fc00ff 100%); /* Degradado de cian a magenta neón */
+    padding: 0.6rem 1.8rem;
+    border-radius: 15px; /* Bordes más suaves */
+    display: inline-block;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Sombra de texto más pronunciada */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* === Navegación === */
+.nav {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem; /* Aumenta el espacio entre ítems */
+    padding: 0;
+    margin: 0; /* Asegura que no haya margin por defecto */
+    flex-wrap: wrap;
+    justify-content: center; /* Centra los ítems en pantallas pequeñas */
+}
+
+.nav li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 600; /* Un poco más de peso */
+    background-color: rgba(255, 255, 255, 0.15); /* Fondo semitransparente para un efecto "glassmorphism" */
+    backdrop-filter: blur(5px); /* Efecto de desenfoque, ideal para glassmorphism */
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px; /* Bordes más redondeados tipo píldora */
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Borde sutil */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav li a:hover {
+    background-color: rgba(255, 255, 255, 0.3); /* Más opaco en hover */
+    transform: translateY(-3px); /* Pequeño efecto al pasar el mouse */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* === Sección hero === */
+.hero {
+    background: linear-gradient(135deg, #fc00ff 0%, #00dbde 100%); /* Degradado cian-magenta más intenso */
+    text-align: center;
+    padding: 4rem 1.5rem; /* Más padding para que respire */
+    color: #fff;
+    position: relative; /* Para posibles animaciones o capas */
+    overflow: hidden; /* Asegura que las imágenes no se salgan */
+}
+
+.hero h2 {
+    font-size: 3.5rem; /* Títulos más grandes */
+    margin-bottom: 0.8rem;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+}
+
+.hero p {
+    font-size: 1.3rem; /* Párrafos más legibles */
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.hero img {
+    width: 300px; /* Tamaño más generoso para la imagen principal */
+    max-width: 90%;
+    display: block;
+    margin: 2rem auto 2rem auto;
+    border-radius: 25px; /* Bordes más redondeados */
+    border: 5px solid #fff; /* Borde blanco que la hace resaltar */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Sombra más suave y extendida */
+    transform: rotate(3deg); /* Ligeramente inclinado para dinamismo */
+    transition: transform 0.5s ease-in-out;
+}
+
+.hero img:hover {
+    transform: rotate(0deg) scale(1.03); /* Endereza y agranda un poco en hover */
+}
+
+/* === Botón principal === */
+.btn {
+    background: linear-gradient(45deg, #6a11cb 0%, #2575fc 100%); /* Degradado azul-morado para los botones */
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.8rem; /* Padding generoso */
+    border-radius: 35px; /* Más redondeado aún */
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 700; /* Más peso */
+    font-size: 1.1rem; /* Texto más grande */
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    margin-top: 1.5rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Sombra sutil pero efectiva */
+    display: inline-block; /* Para que funcione margin-top correctamente en el anchor */
+}
+
+.btn:hover {
+    background: linear-gradient(45deg, #2575fc 0%, #6a11cb 100%); /* Invierte el degradado en hover */
+    transform: translateY(-3px); /* Pequeño salto */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo para el botón de eliminar pedido */
+#btn-eliminar {
+    background-color: #dc3545; /* Rojo de Bootstrap para peligro */
+    box-shadow: 0 5px 15px rgba(220, 53, 69, 0.4);
+}
+
+#btn-eliminar:hover {
+    background-color: #c82333;
+    box-shadow: 0 8px 20px rgba(220, 53, 69, 0.6);
+}
+
+
+/* === Formularios y secciones de contenido === */
+section {
+    padding: 3rem 0; /* Padding consistente para todas las secciones */
+    background-color: #ffffff; /* Fondo blanco para las secciones */
+    margin-bottom: 2rem; /* Espacio entre secciones */
+    border-radius: 15px; /* Bordes redondeados para las secciones */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Sombra suave para "elevar" las secciones */
+}
+
+/* Ajusta padding del contenedor si ya está en la sección */
+section.container {
+    padding: 2.5rem 1.5rem; /* Mantener padding original si el .container ya está dentro */
+}
+
+
+h3 {
+    font-size: 2.2rem;
+    color: #444;
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+h3::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #fc00ff 0%, #00dbde 100%);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+form {
+    max-width: 500px; /* Limita el ancho de los formularios */
+    margin: 0 auto 2rem auto; /* Centra el formulario y da espacio inferior */
+    padding: 2rem;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    background-color: #fdfdfd;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+label {
+    font-weight: 600; /* Más peso para las etiquetas */
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.8rem; /* Espacio entre labels */
+    color: #555;
+}
+
+select,
+input[type="email"],
+input[type="password"], /* Estilo para el campo de contraseña */
+input[type="text"] { /* Por si hay otros campos de texto */
+    padding: 0.8rem 1rem;
+    border: 1px solid #ccc; /* Borde más suave */
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%; /* Asegura que ocupen todo el ancho disponible */
+}
+
+select:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus {
+    border-color: #6a11cb; /* Resalta el borde al enfocar */
+    box-shadow: 0 0 0 3px rgba(106, 17, 203, 0.2); /* Sombra de enfoque sutil */
+    outline: none; /* Elimina el contorno predeterminado del navegador */
+}
+
+input[type="checkbox"] {
+    margin-right: 0.5rem;
+    transform: scale(1.2); /* Checkbox un poco más grande */
+}
+
+/* Estilo para la sección de inicio de sesión */
+.inicio-sesion {
+    text-align: center;
+}
+
+.inicio-sesion form {
+    margin-bottom: 1rem; /* Espacio antes del párrafo de registro */
+}
+
+/* Mensaje de confirmación de login */
+#mensaje-login {
+    font-size: 1.1rem;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    display: inline-block; /* Para que el padding se aplique correctamente */
+}
+
+#mensaje-login[style*="green"] { /* Si el color es verde */
+    background-color: #d4edda; /* Fondo suave para éxito */
+    border: 1px solid #28a745;
+    color: #155724;
+}
+
+#mensaje-login[style*="red"] { /* Si el color es rojo */
+    background-color: #f8d7da; /* Fondo suave para error */
+    border: 1px solid #dc3545;
+    color: #721c24;
+}
+
+
+/* === Galería de sabores === */
+.galeria-sabores {
+    display: flex; /* Cambia a Flexbox */
+    flex-wrap: nowrap; /* ¡Impide que las imágenes se envuelvan a la siguiente línea! */
+    overflow-x: auto; /* Agrega scroll horizontal si no caben todas */
+    -webkit-overflow-scrolling: touch; /* Mejora el scroll en dispositivos iOS */
+    gap: 1.5rem; /* Mantiene el espacio entre las imágenes */
+    margin-top: 2rem;
+    justify-content: flex-start; /* Alinea las imágenes al inicio */
+    padding-bottom: 15px; /* Espacio para el scrollbar si es visible */
+}
+
+/* Opcional: Estilo para la barra de desplazamiento (solo para navegadores WebKit como Chrome/Safari) */
+.galeria-sabores::-webkit-scrollbar {
+    height: 8px;
+}
+
+.galeria-sabores::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg, #fc00ff, #00dbde); /* Color neón para la barra */
+    border-radius: 10px;
+}
+
+.galeria-sabores::-webkit-scrollbar-track {
+    background: #f0f2f5; /* Color de fondo de la pista */
+}
+
+.galeria-sabores img {
+    /* Mantén estos estilos para las imágenes individuales, asegurando su tamaño */
+    width: 150px; /* Tamaño fijo para que se mantengan uniformes */
+    min-width: 120px; /* Asegura un tamaño mínimo si la haces más compleja */
+    height: auto;
+    flex-shrink: 0; /* ¡Importante! Evita que las imágenes se encojan */
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 3px solid #eee;
+}
+
+.galeria-sabores img:hover {
+    transform: scale(1.08) translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* === Carrito de compras === */
+ul#lista-carrito {
+    list-style: none; /* Quitamos los puntos por defecto */
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    background-color: #f8f9fa; /* Fondo muy claro para el carrito */
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* Sombra más sutil */
+}
+
+ul#lista-carrito li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #eee; /* Separador sutil */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.05rem;
+    color: #444;
+}
+
+ul#lista-carrito li:last-child {
+    border-bottom: none; /* Sin borde en el último elemento */
+}
+
+#carrito p strong {
+    font-size: 1.3rem;
+    color: #222;
+}
+
+/* Mensaje de confirmación para el carrito */
+#mensaje-confirmacion {
+    font-size: 1rem;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    display: inline-block;
+}
+
+/* === Pie de página === */
+.footer {
+    background: linear-gradient(90deg, #2575fc 0%, #6a11cb 100%); /* Degradado consistente con el header */
+    text-align: center;
+    padding: 1.5rem 0;
+    font-size: 1rem;
+    color: #ffffff;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* === Responsive para móviles === */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column; /* Apila el logo y la navegación */
+        gap: 1.5rem;
+    }
+
+    .nav {
+        gap: 0.8rem; /* Reduce el espacio en la navegación */
+    }
+
+    .logo {
+        font-size: 2.2rem; /* Ajusta el tamaño del logo */
+        padding: 0.4rem 1rem;
+    }
+
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero img {
+        width: 200px;
+        transform: rotate(0deg); /* Quita la rotación en móvil */
+    }
+
+    h3 {
+        font-size: 1.8rem;
+    }
+
+    .galeria-sabores {
+        /* En móviles, la galería de frutas puede ocupar menos espacio */
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Ajusta para móviles */
+        gap: 0.8rem;
+    }
+
+    .galeria-sabores img {
+        width: 100px; /* Tamaño de imagen ligeramente más pequeño en móvil */
+        min-width: 80px;
+    }
+
+    section {
+        padding: 2rem 0;
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav {
+        flex-direction: column; /* Apila los enlaces de navegación */
+        align-items: center;
+    }
+
+    .nav li a {
+        width: 80%; /* Hace que los enlaces ocupen más ancho */
+        text-align: center;
+    }
+
+    .btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    form {
+        padding: 1.5rem;
+    }
+}
